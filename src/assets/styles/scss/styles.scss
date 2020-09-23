@@ -93,6 +93,10 @@ body {
   opacity: 0;
 }
 
+.home-heart {
+  position: absolute;
+}
+
 @media (max-width: 420px) {
   .home-btn {
     height: 45px;

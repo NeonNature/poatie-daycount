@@ -20,7 +20,8 @@ class Home extends Component {
             'Coconut',
             'Rickroll'
         ],
-        activeSong: ''
+        activeSong: '',
+        heartCount: 29
     }
 
     componentDidMount() {
@@ -32,6 +33,32 @@ class Home extends Component {
         years = moment.duration(current.diff(given)).asYears().toFixed(2);
 
         let randomSong = this.state.songList[Math.floor(Math.random()*this.state.songList.length)]
+
+        for (let i = 0; i < this.state.heartCount; i++) {
+            let min = 1, max = 100;
+
+            let Xpercent = Math.floor(Math.random() * (max - min + 1)) + min;
+            let Ypercent = Math.floor(Math.random() * (max - min + 1)) + min;
+
+            let Xdura = Math.floor(Math.random() * (max - min + 1)) + min;
+            let Ydura = Math.floor(Math.random() * (max - min + 1)) + min;
+
+            anime({
+                targets: '.home-heart-' + (i+1),
+                top: [
+                    { value: Xpercent + '%', duration: Xdura * 100 },
+                    { value: (Xpercent + 1) + '%', duration: Xdura * 100 }
+                ],
+                right: [
+                    { value: Ypercent + '%', duration: Ydura * 100 },
+                    { value: (Ypercent + 1) + '%', duration: Ydura * 100 }
+                ],
+                // rotate: '1turn',
+                duration: 2000,
+                loop: true
+            });
+        }
+        
 
 
         this.setState({
@@ -157,9 +184,14 @@ class Home extends Component {
 
         const state = this.state;
 
+        let hearts = [];
+
+        for (let i = 0; i < state.heartCount; i++) {
+            hearts.push(<img key={i} src={require('../assets/images/Pixel_heart_red.svg')} className={"home-heart home-heart-"+ (i+1)} />);
+        }
+
         return (
             <div className="home-container">
-            {/* Hi */}
             <Particles 
             params={{
                 "particles": {
@@ -325,6 +357,8 @@ class Home extends Component {
                     // onFinishedPlaying={this.handleSongFinishedPlaying}
                 /> : ''
             }
+
+            {hearts}
             
             
             </div>
