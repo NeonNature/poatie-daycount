@@ -1,0 +1,43 @@
+{
+  "name": "poatie-daycount",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": ".",
+  "dependencies": {
+    "animejs": "^3.2.0",
+    "axios": "^0.18.0",
+    "bootstrap": "^4.3.1",
+    "global": "^4.4.0",
+    "moment": "^2.29.0",
+    "node-sass": "^4.12.0",
+    "react": "^16.8.4",
+    "react-datepicker": "^2.12.1",
+    "react-dom": "^16.8.4",
+    "react-portal": "^4.2.1",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "^3.2.0",
+    "react-sound": "^1.2.0",
+    "reactstrap": "^8.4.1",
+    "window": "^4.2.7"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "redux-devtools": "^3.5.0"
+  },
+  "proxy": "http://18.141.81.212/booking/"
+}
